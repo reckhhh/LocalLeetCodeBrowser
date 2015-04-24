@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Palindrome Number</title>
+    <script type="text/javascript" src="highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" type="text/css" href="xcode.css">
+</head>
+<body>
+<h3>Palindrome Number</h3>
+<div class="description" font-size="5px">
+    <p><font size="2">Determine whether an integer is a palindrome. Do this without extra space.</font></p>
+</div>
+<div style = "overflow: scroll">  
+    <pre><code>
+class Solution {
+public:
+    bool isPalindrome(int x) {
+        if (x < 0)
+            return false;
+        if (x < 10)
+            return true;
+        if (x % 10 == 0)
+            return false;
+        int reverse = 0;
+        while (x > reverse){
+            reverse = reverse * 10 + x % 10;
+            x = x / 10;
+        }
+        if (x == reverse || x == reverse / 10) {
+            return true;
+        }
+        else 
+            return false;
+
+    }
+};
+    </code></pre>
+</div>
+
+</body>
+</html>

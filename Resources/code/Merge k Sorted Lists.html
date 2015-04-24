@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Merge k Sorted Lists</title>
+    <script type="text/javascript" src="highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" type="text/css" href="xcode.css">
+</head>
+<body>
+<h3>Merge k Sorted Lists</h3>
+<div class="description" font-size="5px">
+    <p><font size="2">Merge k sorted linked lists and return it as one sorted list.</font></p>
+</div>
+<div style = "overflow: scroll">  
+    <pre><code>
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode *mergeKLists(vector&ltListNode *> &lists) {
+        if (lists.empty()) {
+            return NULL;
+        }
+        if (lists.size() == 1) {
+            return lists[0];
+        }
+        if (lists.size() == 2) {
+            return mergeTwo(lists[0], lists[1]);
+        }
+        int size = lists.size();
+        ListNode *left = merge(lists, 0, size / 2);
+        ListNode *right = merge(lists, size / 2 + 1, size - 1);
+        return mergeTwo(left, right);
+
+    }
+    ListNode *merge(vector&ltListNode *> &lists, int l, int r) {
+        if (l == r) {
+            return lists[l];
+        }
+        if (r - l == 1) {
+            return mergeTwo(lists[l], lists[r]);
+        }
+        ListNode *left = merge(lists, l, l + (r - l) / 2);
+        ListNode *right = merge(lists, l + (r - l) / 2 + 1, r);
+        return mergeTwo(left, right);
+    }
+    ListNode *mergeTwo(ListNode * &left, ListNode * &right) {
+        ListNode *dummyhead = new ListNode(0);
+        ListNode *p = dummyhead;
+        ListNode *left_index = left;
+        ListNode *right_index = right;
+        if (left == NULL) return right;
+        if (right == NULL) return left;
+        while (left_index != NULL && right_index != NULL) {
+            if (left_index->val > right_index->val) {
+                p->next = new ListNode(right_index->val);
+                p = p->next;
+                right_index = right_index->next;
+
+            }
+            else {
+                p->next = new ListNode(left_index->val);
+                p = p->next;
+                left_index = left_index->next;
+            }
+        }
+        if (left_index == NULL) {
+            if (right_index != NULL) {
+                p->next = right_index;
+            }
+        }
+        else {
+            if (left_index != NULL) {
+                p->next = left_index;
+            }
+        }
+        return dummyhead->next;
+    }
+};
+    </code></pre>
+</div>
+
+</body>
+</html>

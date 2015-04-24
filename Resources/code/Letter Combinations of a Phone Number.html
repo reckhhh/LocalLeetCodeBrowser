@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Letter Combinations of a Phone Number</title>
+    <script type="text/javascript" src="highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" type="text/css" href="xcode.css">
+</head>
+<body>
+<h3>Letter Combinations of a Phone Number</h3>
+<div class="description" font-size="5px">
+    <p><font size="2">Given a digit string, return all possible letter combinations that the number could represent.</font></p>
+    <p><font size="2">A mapping of digit to letters (just like on the telephone buttons) is given below.</font></p>
+    <img src="phone pad.png">
+    <p><font size="2">Although the above answer is in lexicographical order, your answer could be in any order you want.</font></p>
+</div>
+<div style = "overflow: scroll">  
+    <pre><code>
+class Solution {
+public:
+    vector&ltstring> letterCombinations(string digits) {
+        unordered_map&ltchar, string> phone_pad;
+        phone_pad['2']= "abc";
+        phone_pad['3']= "def";
+        phone_pad['4']= "ghi";
+        phone_pad['5']= "jkl";
+        phone_pad['6']= "mno";
+        phone_pad['7']= "pqrs";
+        phone_pad['8']= "tuv";
+        phone_pad['9']= "wxyz";
+        
+        vector&ltstring> result;
+        string current = phone_pad[digits[0]];
+        if (digits.size() == 0) {
+            result.push_back("");
+            return result;
+        }
+        if (digits.size() == 1) {
+            for (int i = 0; i < current.size(); ++i) {
+                string tmp = "";
+                tmp.push_back(current[i]);
+                result.push_back(tmp);
+            }
+            return result;
+        }
+        string next = digits.substr(1, digits.size() - 1);
+        vector&ltstring> iter = letterCombinations(next);
+        for (int i = 0; i < current.size(); ++i) {
+            for (int j = 0; j < iter.size(); ++j) {
+                string tmp = "";
+                tmp.push_back(current[i]);
+                result.push_back((tmp + iter[j]));
+            }
+        }
+        return result;
+    }
+};
+    </code></pre>
+</div>
+
+</body>
+</html>

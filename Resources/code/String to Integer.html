@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>String to Integer</title>
+    <script type="text/javascript" src="highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" type="text/css" href="xcode.css">
+</head>
+<body>
+<h3>String to Integer</h3>
+<div class="description" font-size="5px">
+    <p><font size="2">Implement atoi to convert a string to an integer.</font></p>
+</div>
+<div style = "overflow: scroll">  
+    <pre><code>
+class Solution {
+public:
+    int atoi(const char *str) {
+        int length = strlen(str);
+        int sign = 1;
+        int start = 0;
+        for (int i = 0; i < length; i++) {
+            if (str[i] == ' ' || str[i] == 0x9) {
+                start++;
+            }
+            else {
+                break;
+            }
+        }
+        if (str[start] == '-') {
+            sign  = -1;
+            start++;
+        }
+        else if (str[start] == '+') {
+            sign  =  1;
+            start ++;
+        }
+        unsigned int result = 0;
+        for (int i = start; i < length; i++) {
+            if (isdigit(str[i])) {
+                int digit = str[i] - '0';
+                if (INT_MAX / 10 >= result)
+                    result *= 10;
+                else
+                    return sign == -1 ? INT_MIN : INT_MAX;
+                 
+                if (INT_MAX - digit >= result)
+                    result += digit;
+                else
+                    return sign == -1 ? INT_MIN : INT_MAX;
+            }
+            else { //illegal input
+                break;
+            }
+        }
+        return sign*((int)result);
+    
+
+    }
+};
+    </code></pre>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Substring with Concatenation of All Words</title>
+    <script type="text/javascript" src="highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" type="text/css" href="xcode.css">
+</head>
+<body>
+<h3>Substring with Concatenation of All Words</h3>
+<div class="description" font-size="5px">
+    <p><font size="2">You are given a string, S, and a list of words, L, that are all of the same length. Find all starting indices of substring(s) in S that is a concatenation of each word in L exactly once and without any intervening characters.</font></p>
+    <p><font size="2">For example, given:</font></p>
+    <p><font size="2">S: "barfoothefoobarman"</font></p>
+    <p><font size="2">L: ["foo", "bar"]</font></p>
+    <p><font size="2">You should return the indices: [0,9].</font></p>
+    <p><font size="2">(order does not matter).</font></p>
+</div>
+<div style="overflow: scroll">
+<pre><code>
+class Solution {
+public:
+    vector<int> findSubstring(string S, vector<string> &L) {
+        return findSubstring2(S, L);
+    }
+
+    vector<int> findSubstring1(string S, vector<string> &L) {
+        vector<int> res;
+        if (S.empty() || L.empty() || L[0].empty()) return res;
+        int N = S.size(), M = L.size(), K = L[0].size();
+        unordered_map<string, int> toFind, hasFound;
+        for (string & str : L) toFind[str]++;
+        for (int i = 0; i <= N - M*K; i++) {
+            hasFound.clear();
+            int j = 0;
+            for (; j < M; j++) {
+                string sub = S.substr(i + j*K, K);
+                if (!toFind.count(sub)) break;
+                hasFound[sub]++;
+                if (hasFound[sub] > toFind[sub]) break;
+            }
+            if (j == M) res.push_back(i);
+        }
+        return res;
+    }
+
+    vector<int> findSubstring2(string S, vector<string> &L) {
+        vector<int> res;
+        if (S.empty() || L.empty() || L[0].empty()) return res;
+        unordered_map<string, int> toFind, hasFound;
+        for (auto & str : L) toFind[str]++;
+        int N = S.size(), M = L.size(), K = L[0].size();
+        for (int k = 0; k < K; k++) {
+            hasFound.clear();
+            int cnt = 0;
+            for (int begin = k, end = k; end < N; end += K) {
+                if (!toFind.count(S.substr(end, K))) hasFound.clear(), cnt = 0, begin = end + K;
+                else if (hasFound[S.substr(end, K)] < toFind[S.substr(end, K)]) hasFound[S.substr(end, K)]++, cnt++;
+                else {
+                    while (S.substr(begin, K) != S.substr(end, K)) hasFound[S.substr(begin, K)]--, cnt--, begin += K;
+                    begin += K;
+                }
+                if (cnt == M) res.push_back(begin);
+            }
+        }
+        return res;
+    }
+};
+</code></pre>
+</div>
+
+
+</body>
+</html>

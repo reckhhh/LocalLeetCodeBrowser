@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Longest Common Prefix</title>
+    <script type="text/javascript" src="highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" type="text/css" href="xcode.css">
+</head>
+<body>
+<h3>Longest Common Prefix</h3>
+<div class="description" font-size="5px">
+    <p><font size="2">Write a function to find the longest common prefix string amongst an array of strings.</font></p>
+</div>
+<div style = "overflow: scroll">  
+    <pre><code>class Solution {
+public:
+    string longestCommonPrefix(vector&ltstring> &strs) {
+        string result = "";
+        if (strs.size() == 0) {
+            return result;
+        }
+        else {
+            result = strs[0];
+        }
+        for (int i = 1; i < strs.size(); ++i) {
+            result = prefixOfTwo(result, strs[i]);
+        }
+        return result;
+    }
+    string prefixOfTwo(string str1, string str2) {
+        int size = (str1.size() < str2.size()) ? str1.size() : str2.size();
+        string ret = "";
+        for (int i = 0; i < size; ++i) {
+            if (str1[i] == str2[i]) {
+                ret += str1[i];
+            }
+            else{
+                break;
+            }
+        }
+        return ret;
+    }
+};
+    </code></pre>
+</div>
+
+</body>
+</html>

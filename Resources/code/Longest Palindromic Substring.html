@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Longest Palindromic Substring</title>
+    <script type="text/javascript" src="highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" type="text/css" href="xcode.css">
+</head>
+<body>
+<h3>Longest Palindromic Substring</h3>
+<div class="description" font-size="5px">
+    <p><font size="2">Given a string S, find the longest palindromic substring in S. You may assume that the maximum length of S is 1000, and there exists one unique longest palindromic substring.</font></p>
+</div>
+<div style = "overflow: scroll">  
+    <pre><code>
+//Manacher Algorithms
+class Solution {
+public:
+    string longestPalindrome(string s) {
+        string ModifiedStr = "$#";
+        for (int i = 0; i < s.size(); i++) {
+            ModifiedStr = ModifiedStr + s[i] + "#";
+        }
+        int ModifiedStrSize = ModifiedStr.size();
+        int *p =new int[ModifiedStrSize];//leetCode oj: int p[4000] = {0} is ok, in case of runtime error
+        int mx = 0, id = 0;
+
+        for (int i = 1; i < ModifiedStrSize; i++) {
+            if (mx > i) {
+                p[i] = (p[2 * id - 1] < (mx - i)) ? p[2 * id - 1] : (mx - i);
+            }
+            else {
+                p[i] = 1;
+            }
+            while (ModifiedStr[i - p[i]] == ModifiedStr[i + p[i]]) {
+                p[i]++;
+                if ((i - p[i]) < 0 || (i + p[i]) >= ModifiedStrSize) {
+                    break;
+                }
+            }
+            p[i]--;
+            if (i + p[i] > mx) {
+                mx = i + p[i];
+                id = i;
+                
+            }
+        }
+
+        int maxlength = 0;
+        int middleindex = 0;
+        for (int i = 1; i < ModifiedStrSize; i++) {
+            if (p[i] > maxlength){
+                maxlength = p[i];
+                middleindex = i;
+            }
+        }
+        
+        int start =  middleindex - maxlength;
+        int end = middleindex + maxlength;
+        string result = "";
+        for (int i = start; i <= end; i++) {
+            if (ModifiedStr[i] != '#') {
+                result+=ModifiedStr[i];
+            }
+        }
+        delete[] p;
+        return result;
+
+    }
+};
+    </code></pre>
+</div>
+
+</body>
+</html>

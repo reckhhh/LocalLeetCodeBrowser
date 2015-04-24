@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>First Missing Positive</title>
+    <script type="text/javascript" src="highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" type="text/css" href="xcode.css">
+</head>
+<body>
+<h3>First Missing Positive</h3>
+<div class="description" font-size="5px">
+    <p><font size="2">Given an unsorted integer array, find the first missing positive integer.</font></p>
+    <p><font size="2">For example,</font></p>
+    <p><font size="2">Given [1, 2, 0] return 3,</font></p>
+    <p><font size="2">and [3, 4, -1, 1] return 2.</font></p>
+    <p><font size="2">Your algorithm should run in O(n) time and uses constant space.</font></p>
+    
+</div>
+<div style = "overflow: scroll">  
+    <pre><code>
+class Solution {
+public:
+    int firstMissingPositive(int A[], int n) {
+        //very tricky. Since we only have n numbers, so the first missing
+        //positive must be in [1, n + 1]
+        if (n == 0) return 1;
+        for (int i = 0; i < n; ++i) {
+            //put value (inside [1, n]) into right cell
+            if (A[i] > 0 && A[i] <= n && A[i] != i + 1) {
+                if (A[A[i] - 1] != A[i]) {
+                    int temp = A[A[i] - 1];
+                    A[A[i] - 1] = A[i];
+                    A[i] = temp;
+                    --i;
+                }
+            }
+        }
+        for (int i = 0; i < n; ++i) {
+            if (A[i] != i + 1) {
+                return i + 1;
+            }
+        }
+        return n + 1;
+    }
+};
+    </code></pre>
+</div>
+
+</body>
+</html>

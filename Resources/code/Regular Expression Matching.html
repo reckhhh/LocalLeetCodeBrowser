@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Regular Expression Matching</title>
+    <script type="text/javascript" src="highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" type="text/css" href="xcode.css">
+</head>
+<body>
+<h3>Regular Expression Matching</h3>
+<div class="description" font-size="5px">
+    <p><font size="2">Implement regular expression matching with support for '.' and '*'.</font></p>
+    <p><font size="2">'.' Matches any single character. '*' Matches zero or more of the preceding element.</font></p>
+    <p><font size="2">You may assume that each input would have exactly one solution.</font></p>
+    <p><font size="2">The matching should cover the entire input string (not partial).</font></p>
+    <p><font size="2"></font></p>
+</div>
+<div style = "overflow: scroll">  
+    <pre><code>
+class Solution {
+public:
+    bool isMatch(const char *s, const char *p) {
+        int repeat = 0;
+        while (*s != '\0') {
+            if (*p == '\0') {
+                return false;
+            }
+            if (*p == '.') {
+                s++;
+                p++;
+            }
+            else if (*p == '*') {
+                if (*(p - 1) == '.' || *(p - 1) == *s) {
+                    s++;
+                    repeat++;
+                    continue;
+                }
+                else {
+
+                    if (*(p + 1) == *s) {//if (*(p + 1) == *s || *(p + 1) == '.'){
+                        p++;
+                        continue;
+                    }
+
+                    int MaxLength = repeat + 1;
+                    bool match = false;
+                    for (int i = 0; i <= MaxLength; i++) {
+                        if (isMatch(s - i,p + 1)) {
+                            match  = true;
+                            break;
+                        }
+                    }
+                    return match;
+                }
+            }
+            else if (*p == *s) {
+                s++;
+                p++;
+                repeat = 0;
+            }
+            else {
+                if (*(p + 1) == '*') {
+                    p = p + 2;
+                    repeat = 0;
+                }
+                else {
+                    return false;
+                }
+            }
+        }
+        if (*p != '\0') {
+            if ( *p == '*') {
+                if (*(p + 1) == '\0') {
+                    return true;
+                }
+                else {
+                    int MaxLength = repeat+1;
+                    bool match = false;
+                    const char *temp = p+1;
+                    for (int i = 0; i <= MaxLength; i++){
+                        if(isMatch(s - i, temp)){
+                            match = true;
+                            break;
+                        }
+                    }
+                    return match;
+                }
+            }
+            else { //*p!='*'
+                return ReEmpty(p);
+            }
+        }
+        return true;
+    }
+    bool ReEmpty(const char *p) { //check if this regular expr could match empty string
+        while (*p != '\0') {
+            if (*(p + 1) != '*') {
+                return false;
+            }
+            p = p + 2;
+        }
+        return true;
+    }
+};
+    </code></pre>
+</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Container With Most Water</title>
+    <script type="text/javascript" src="highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" type="text/css" href="xcode.css">
+</head>
+<body>
+<h3>Container With Most Water</h3>
+<div class="description" font-size="5px">
+    <p><font size="2">Given n non-negative integers a1, a2, ..., an, where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). </font></p>
+    <p><font size="2">Find two lines, which together with x-axis forms a container, such that the container contains the most water.</font></p>
+    <p><font size="2">Note: You may not slant the container.</font></p>
+</div>
+<div style = "overflow: scroll">  
+    <pre><code>
+class Solution {
+public:
+    int maxArea(vector&ltint> &height) {
+        int high = height.size() - 1;
+        int low = 0;
+        int maxArea = 0;
+        while (low < high) {
+            maxArea = max(maxArea, (high - low) * min(height[low], height[high]));
+            if (height[low] < height[high]) {
+                low++;  // we ignore to compute area[low, high-k] (k=1,2...)
+                        // because here height is limited by low, 
+                        // the width of area[low, high -k] is shorter while height could not be longer
+            }
+            else {
+                high--;
+            }
+        }
+        
+        return maxArea;
+    }
+};
+    </code></pre>
+</div>
+
+</body>
+</html>

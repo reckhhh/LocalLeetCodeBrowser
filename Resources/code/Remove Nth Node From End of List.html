@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Remove Nth Node From End of List</title>
+    <script type="text/javascript" src="highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" type="text/css" href="xcode.css">
+</head>
+<body>
+<h3>Remove Nth Node From End of List</h3>
+<div class="description" font-size="5px">
+    <p><font size="2">Given a linked list, remove the n<sup>th</sup> node from the end of list and return its head.</font></p>
+    <p><font size="2">Given n will always be valid.</font></p>
+    <p><font size="2">Try to do this in one pass.</font></p>
+</div>
+<div style = "overflow: scroll">  
+    <pre><code>
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode *removeNthFromEnd(ListNode *head, int n) {
+        if (n == 0) {
+            return head;
+        }
+        ListNode *front;
+        ListNode *back;
+        ListNode *virtual_head = new ListNode(0);
+        front = virtual_head;
+        back = virtual_head;
+        virtual_head->next = head;
+        for (int i = 0; i < n; ++i) {
+            front = front->next;
+        }
+        while (front->next != NULL) {
+            front = front->next;
+            back = back->next;
+        }
+        back->next = (back->next)->next;
+        return virtual_head->next;
+    }
+};
+    </code></pre>
+</div>
+
+</body>
+</html>

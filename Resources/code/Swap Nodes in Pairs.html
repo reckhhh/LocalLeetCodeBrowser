@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Swap Nodes in Pairs</title>
+    <script type="text/javascript" src="highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" type="text/css" href="xcode.css">
+</head>
+<body>
+<h3>Swap Nodes in Pairs</h3>
+<div class="description" font-size="5px">
+    <p><font size="2">Given a linked list, swap every two adjacent nodes and return its head.</font></p>
+    <p><font size="2">For example,</font></p>
+    <p><font size="2">Given 1->2->3->4, you should return the list as 2->1->4->3.</font></p>
+    <p><font size="2">Your algorithm should use only constant space. You may not modify the values in the list, only nodes itself can be changed.</font></p>
+</div>
+<div style = "overflow: scroll">  
+    <pre><code>
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode *swapPairs(ListNode *head) {
+        if (head == NULL || head->next == NULL) {
+            return head;
+        }
+        ListNode *dummy_head = new ListNode(0);
+        dummy_head->next = head;
+        ListNode *i = dummy_head;
+        ListNode *j = i->next;
+        ListNode *k = j->next;
+        while (1) {
+            i->next = k;
+            j->next = k->next;
+            k->next = j;
+            i = j;
+            if (i->next == NULL) {
+                break;
+            }
+            j = i->next;
+            if (j->next == NULL){
+                break;
+            }
+            k = j->next;
+        }
+        return dummy_head->next;
+    }
+};
+    </code></pre>
+</div>
+
+</body>
+</html>

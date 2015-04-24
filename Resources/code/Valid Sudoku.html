@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Valid Sudoku</title>
+    <script type="text/javascript" src="highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" type="text/css" href="xcode.css">
+</head>
+<body>
+<h3>Valid Sudoku</h3>
+<div class="description" font-size="5px">
+    <p><font size="2">Determine if a Sudoku is valid.</font></p>
+    <p><font size="2">The Sudoku board could be partially filled, where empty cells are filled with the character '.'.</font></p>
+    <p><font size="2">A valid Sudoku board (partially filled) is not necessarily solvable. Only the filled cells need to be validated.</font></p>
+    
+</div>
+<div style = "overflow: scroll">  
+    <pre><code>
+class Solution {
+public:
+    bool isValidSudoku(vector<vector<char> > &board) {
+        for (int i = 0; i < 9; ++i) {
+            if (!checkRows(board, i))
+                return false;
+            if (!checkColumns(board, i))
+                return false;
+        }
+        return checkBlocks(board);
+    }
+
+    bool checkRows(vector<vector<char> > &board, int row_num) {
+        vector<char> row(board[row_num]);
+        return checkNumbers(row);
+    }
+
+    bool checkColumns(vector<vector<char> > &board, int column_num) {
+        vector<char> column(9, '.');
+        for (int i = 0; i < 9; ++i) {
+            column[i] = board[i][column_num];
+        }
+        return checkNumbers(column);
+    }
+
+    bool checkBlocks(vector<vector<char> > &board) {
+        vector<char> block;
+        vector<vector<char> > block_array(9, block);
+        for (int i = 0; i < 81; ++i) {
+            int row = i / 9;
+            int column = i % 9;
+            int block_index = (row / 3) * 3 + column / 3;
+            block_array[block_index].push_back(board[row][column]);
+        }
+        for (int i = 0; i < 9; ++i) {
+            if (!checkNumbers(block_array[i]))
+                return false;
+        }
+        return true;
+    }
+    bool checkNumbers(vector<char> &num_set) {
+        if (num_set.size() != 9) {
+            return false;
+        }
+        int temp[9] = {0}; //set all to not exist
+        for (int i = 0; i < 9; ++i) {
+            if (num_set[i] == '.') continue;
+            int index = num_set[i] - 49;
+            if ((index < 9) && (index >= 0) && (temp[index] == 0)) {
+                temp[index] = 1;
+            }
+            else {
+                return false;
+            }
+        }
+        return true;
+    }
+};
+    </code></pre>
+</div>
+
+</body>
+</html>

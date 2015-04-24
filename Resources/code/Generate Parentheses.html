@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Parentheses</title>
+   <script type="text/javascript" src="highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" type="text/css" href="xcode.css">
+</head>
+<body>
+<h3>Generate Parentheses</h3>
+<div class="description" font-size="5px">
+    <p><font size="2">Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.</font></p>
+    <p><font size="2">For example, given n = 3, a solution set is:</font></p>
+    <p><font size="2">"((()))", "(()())", "(())()", "()(())", "()()()"</font></p>
+</div>
+<div style = "overflow: scroll">  
+    <pre><code>
+class Solution {
+public:
+    vector&ltstring> generateParenthesis(int n) {
+        vector&ltstring> result;
+        if (n > 0) {
+            generator(result, "", 0, 0, n);
+        }
+        return result;
+    }
+    void generator(vector&ltstring> &result, string s, int l, int r, int n) {
+        if (l == n) {
+            result.push_back(s.append(n - r, ')'));
+            return;
+        }
+        generator(result, s + "(", l + 1, r, n);
+        if (l > r) {
+            generator(result, s + ")", l, r + 1, n);
+        }
+    }
+};
+    </code></pre>
+</div>
+
+</body>
+</html>

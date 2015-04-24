@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Count and Say</title>
+    <script type="text/javascript" src="highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" type="text/css" href="xcode.css">
+</head>
+<body>
+<h3>Count and Say</h3>
+<div class="description" font-size="5px">
+    <p><font size="2">The count-and-say sequence is the sequence of integers beginning as follows:</font></p>
+    <p><font size="2">1, 11, 21, 1211, 111221, ...</font></p>
+    <p><font size="2">1 is read off as "one 1" or 11.</font></p>
+    <p><font size="2">11 is read off as "two 1s" or 21.</font></p>
+    <p><font size="2">21 is read off as "one 2, then one 1" or 1211.</font></p>
+    <p><font size="2">Given an integer n, generate the nth sequence.</font></p>
+    <p><font size="2">Note: The sequence of integers will be represented as a string.</font></p>
+    
+</div>
+<div style = "overflow: scroll">  
+    <pre><code>
+class Solution {
+public:
+    string countAndSay(int n) {
+        if (n <= 1) {
+            return "1";
+        }
+        string previous = countAndSay(n - 1);
+        string result = "";
+        int index = 1;
+        int length = previous.length();
+        int count = 1;
+        if (length == 1) {
+            return "11";
+        }
+        while(index < length) {
+            char current_char = previous.at(index);
+            char last_char = previous.at(index - 1);
+            if (current_char == last_char) {
+                ++count;
+                if (index == length - 1) {//last one
+                    char temp = count + 48;
+                    result.append(1,temp);
+                    result.append(1, last_char);
+                    return result;
+                }
+            }
+            else {
+                char temp = count + 48;
+                result.append(1,temp);
+                result.append(1, last_char);
+                count = 1;
+                if (index == length - 1) {
+                    result.append("1");
+                    result.append(1, current_char);
+                    return result;
+                }
+            }
+            ++index;
+        }
+        return result;
+    }
+};
+    </code></pre>
+</div>
+
+</body>
+</html>

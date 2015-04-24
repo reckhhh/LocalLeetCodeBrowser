@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ZigZag Conversion</title>
+    <script type="text/javascript" src="highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" type="text/css" href="xcode.css">
+</head>
+<body>
+<h3>ZigZag Conversion</h3>
+<div class="description" font-size="5px">
+    <p><font size="2">The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)</font></p>
+    <img src="zigzag.png">
+    <p><font size="2">And then read line by line: "PAHNAPLSIIGYIR"</font></p>
+    <p><font size="2">Write the code that will take a string and make this conversion given a number of rows:</font></p>  
+</div>
+<div style = "overflow: scroll">  
+    <pre><code>
+class Solution {
+public:
+    string convert(string s, int nRows) {
+        if (nRows == 1 || nRows == 0) {
+            return s;
+        }
+        int vertical = nRows;
+        int diagnoal = nRows - 2;
+        int length = s.size();
+        int NumOfCol = 0;
+        if (length % (vertical + diagnoal) == 0) {
+            NumOfCol = 2 * length / (vertical + diagnoal);
+        }
+        else {
+            NumOfCol = 2 * (length / (vertical + diagnoal)) + (length % (vertical + diagnoal)) / vertical + 1;
+        }
+        char *newstr = new char[nRows * NumOfCol];
+        for (int i = 0; i < nRows * NumOfCol; i++) {
+            newstr[i] = ' ';
+        }
+        for (int i = 0; i < length; i++) {
+            int temp1 = i % (vertical + diagnoal);
+            int temp2 = i / (vertical + diagnoal);
+            int row, col;
+            if (temp1 >= vertical) {
+                row = vertical + diagnoal - temp1;
+                col = 2 * temp2 + 1;
+            }
+            else {
+                row = temp1;
+                col = 2 * temp2;
+            }
+            newstr[row * NumOfCol + col] = s[i];
+        }
+        string result = "";
+        for (int i = 0; i < nRows*NumOfCol; i++) {
+            if (newstr[i] != ' ') {
+                result = result + newstr[i];
+            }
+        }
+        delete[] newstr;
+        return result;
+    }
+};
+    </code></pre>
+</div>
+
+</body>
+</html>

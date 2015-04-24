@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search for a Range </title>
+    <script type="text/javascript" src="highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" type="text/css" href="xcode.css">
+</head>
+<body>
+<h3>Search for a Range</h3>
+<div class="description" font-size="5px">
+    <p><font size="2">Given a sorted array of integers, find the starting and ending position of a given target value.</font></p>
+    <p><font size="2">Your algorithm's runtime complexity must be in the order of O(log n).</font></p>
+    <p><font size="2">If the target is not found in the array, return [-1, -1].</font></p>
+    <p><font size="2">For example,</font></p>
+    <p><font size="2">Given [5, 7, 7, 8, 8, 10] and target value 8,</font></p>
+    <p><font size="2">return [3, 4].</font></p>
+</div>
+<div style = "overflow: scroll">  
+    <pre><code>
+class Solution {
+public:
+    vector<int> searchRange(int A[], int n, int target) {
+        int start = -1;
+        int end = -1;
+
+        //choose anyone, then binary search for the limit
+        int pivot = binarySearch(A, 0, n - 1, target);
+        //cout<<pivot<<endl;
+        if (pivot != -1) {
+            start = findLeft(A, 0, pivot,target);
+            end = findRight(A, pivot, n - 1, target);
+        }
+
+
+        vector<int> result(2);
+        result[0] = start;
+        result[1] = end;
+        return result;
+    }
+
+    int binarySearch(int A[], int start, int end, int target) {
+        if (start > end) {
+            return -1;
+        }
+        int mid = (start + end) / 2;
+        if (A[mid] == target) {
+            return mid;
+        }
+        if (A[mid] < target) {
+            return binarySearch(A, mid + 1, end, target);
+        }
+        else {
+            return binarySearch(A, start, mid - 1, target);
+        }
+    }
+
+    int findLeft(int A[], int low, int high, int target) {
+        if (low == high) {
+            return low;
+        }
+        if (low == high - 1) {
+            if (A[low] == target) {
+                return low;
+            }
+            else {
+                return high;
+            }
+        }
+        int mid = (low + high) / 2;
+        if (A[mid] < target) {
+            return findLeft(A, mid, high, target);
+        }
+        else {
+            return findLeft(A, low, mid, target);
+        }
+    }
+
+    int findRight(int A[], int low, int high, int target) {
+        if (low == high) {
+            return low;
+        }
+        if (low == high - 1) {
+            if (A[high] == target) {
+                return high;
+            }
+            else {
+                return low;
+            }
+        }
+        int mid = (low + high) / 2;
+        if (A[mid] > target) {
+            return findRight(A, low, mid, target);
+        }
+        else {
+            return findRight(A, mid, high, target);
+        }
+    }
+};
+    </code></pre>
+</div>
+
+</body>
+</html>

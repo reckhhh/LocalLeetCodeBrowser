@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Two Numbers</title>
+    <script type="text/javascript" src="highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" type="text/css" href="xcode.css">
+</head>
+<body>
+<h3>Add Two Numbers</h3>
+<div class="description" font-size="5px">
+    <p><font size="2">You are given two linked lists representing two non-negative numbers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.</font></p>
+    <p><font size="2">
+        <b>Input: </b>(2 -> 4 -> 3) + (5 -> 6 -> 4)
+    </font></p>
+    <p><font size="2">
+        <b>Output: </b>7 -> 0 -> 8
+    </font></p>
+</div>
+<div style = "overflow:scroll">
+    <pre><code>
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+**/
+class Solution {
+public:
+    ListNode *addTwoNumbers(ListNode *l1, ListNode *l2) {
+        ListNode *currentl1, *currentl2;
+        currentl1 = l1;
+        currentl2 = l2;
+        int carry = 0;
+        int value = 0;
+        int digit = 1; //please note that do not use digit*10 to increase digit.
+                       //int has its own range which could not be overflow
+        unordered_map&ltint, int> hashmap;
+        hashmap[1] = 0;
+        while (1) {
+            value = (currentl1->val + currentl2->val + carry) % 10;
+            carry = (currentl1->val + currentl2->val + carry) / 10;
+            hashmap[digit] = value;
+            if ((currentl1->next != NULL) && (currentl2->next != NULL)) {//both have more digits
+                currentl1 = currentl1->next;
+                currentl2 = currentl2->next;
+                digit = digit + 1;
+                continue;
+            }
+            else {
+                break;
+            }
+        }
+        if ((currentl1->next == NULL) && (currentl2->next == NULL) && (carry == 1)) {
+            digit = digit + 1;
+            hashmap[digit] = 1;
+        }
+        else if ((currentl1->next == NULL) && (currentl2->next != NULL)) {
+            while (currentl2->next != NULL) {
+                currentl2 = currentl2->next;
+                value = (currentl2->val + carry) % 10;
+                carry = (currentl2->val + carry) / 10;
+                digit = digit + 1;
+                hashmap[digit] = value;
+            }
+            if (carry == 1) {
+                digit = digit + 1;
+                hashmap[digit] = 1;
+            }
+        }
+        else if ((currentl1->next != NULL) && (currentl2->next == NULL)) {
+            while (currentl1->next != NULL) {
+                currentl1 = currentl1->next;
+                value = (currentl1->val + carry) % 10;
+                carry = (currentl1->val + carry) / 10;
+                digit = digit + 1;
+                hashmap[digit] = value;
+            }
+            if (carry == 1) {
+                digit = digit + 1;
+                hashmap[digit] = 1;
+            }
+        }
+        ListNode *result, *ptr;
+        result = NULL;
+        while (digit != 0) {
+            ptr = new ListNode(hashmap[digit]);
+            ptr->next = result;
+            result = ptr;
+            digit = digit - 1;
+        }
+        return result;
+    }
+};
+    </code></pre>
+</div>
+
+
+</body>
+</html>

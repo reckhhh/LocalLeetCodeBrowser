@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Permutations II</title>
+    <script type="text/javascript" src="highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" type="text/css" href="xcode.css">
+</head>
+<body>
+<h3>Permutations II</h3>
+<div class="description" font-size="5px">
+    <p><font size="2">Given a collection of numbers that might contain duplicates, return all possible unique permutations.</font></p>
+    <p><font size="2">For example,</font></p>
+    <p><font size="2">[1, 1, 2] have the following unique permutations:</font></p>   
+    <p><font size="2">[1, 1, 2], [1, 2, 1], and [2, 1, 1].</font></p>
+</div>
+<div style = "overflow: scroll">  
+    <pre><code>
+class Solution {
+public:
+    vector&ltvector&ltint> > permuteUnique(vector<int> &num) {
+        vector&ltvector&ltint> > result;
+        unordered_map&ltint, int> exist;
+        if(num.size() == 0) {
+            return result;
+        }
+        if(num.size() == 1) {
+            result.push_back(num);
+            return result;
+        }
+        int length = num.size();
+        for(int i = length - 1; i >= 0;--i) {
+            vector&ltvector&ltint> > nextPermutation;
+            vector&ltint> temp(num);
+            int currentNumber = num[i];
+            if(exist.find(currentNumber) != exist.end()) {
+                continue;
+            }
+            else {
+                exist[currentNumber] = 1;
+            }
+            temp.erase(temp.begin() + i);
+            nextPermutation = permuteUnique(temp);
+            for(int j = 0; j < nextPermutation.size(); ++j) {
+                nextPermutation[j].push_back(currentNumber);
+                vector&ltint> temp_result = nextPermutation[j];
+                result.push_back(temp_result);
+            }
+        }
+        return result;
+    }
+};
+    </code></pre>
+</div>
+
+</body>
+</html>

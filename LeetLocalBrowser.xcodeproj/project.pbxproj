@@ -1,0 +1,845 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		403F96011ADD3E29003299C5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 403F96001ADD3E29003299C5 /* main.m */; };
+		403F96041ADD3E29003299C5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 403F96031ADD3E29003299C5 /* AppDelegate.m */; };
+		403F96071ADD3E29003299C5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 403F96061ADD3E29003299C5 /* ViewController.m */; };
+		403F960A1ADD3E29003299C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 403F96081ADD3E29003299C5 /* Main.storyboard */; };
+		403F960C1ADD3E29003299C5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 403F960B1ADD3E29003299C5 /* Images.xcassets */; };
+		403F960F1ADD3E29003299C5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 403F960D1ADD3E29003299C5 /* LaunchScreen.xib */; };
+		403F961B1ADD3E29003299C5 /* LeetLocalBrowserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 403F961A1ADD3E29003299C5 /* LeetLocalBrowserTests.m */; };
+		403F96251ADD3E3C003299C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 403F96241ADD3E3C003299C5 /* UIKit.framework */; };
+		403F96271ADD3E43003299C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 403F96261ADD3E43003299C5 /* Foundation.framework */; };
+		403F962A1ADD3EA7003299C5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 403F96291ADD3EA7003299C5 /* CoreGraphics.framework */; };
+		403F96331ADD4168003299C5 /* ICSDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 403F962D1ADD4168003299C5 /* ICSDrawerController.m */; };
+		403F96341ADD4168003299C5 /* ICSDropShadowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 403F962F1ADD4168003299C5 /* ICSDropShadowView.m */; };
+		403F96351ADD4168003299C5 /* LaunchImageTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 403F96321ADD4168003299C5 /* LaunchImageTransition.m */; };
+		403F963E1ADD41F6003299C5 /* ProblemStruct.m in Sources */ = {isa = PBXBuildFile; fileRef = 403F963D1ADD41F6003299C5 /* ProblemStruct.m */; };
+		403F96411ADD4204003299C5 /* FileTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 403F96401ADD4204003299C5 /* FileTool.m */; };
+		403F96451ADD439E003299C5 /* DrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 403F96441ADD439E003299C5 /* DrawerViewController.m */; };
+		40AC6E031ADD4AAD00E41FC7 /* CodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40AC6E011ADD4AAD00E41FC7 /* CodeViewController.m */; };
+		40AC6E041ADD4AAD00E41FC7 /* CodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E021ADD4AAD00E41FC7 /* CodeViewController.xib */; };
+		40AC6E081ADD4AC000E41FC7 /* PickOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40AC6E061ADD4AC000E41FC7 /* PickOneViewController.m */; };
+		40AC6E091ADD4AC000E41FC7 /* PickOneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E071ADD4AC000E41FC7 /* PickOneViewController.xib */; };
+		40AC6E101ADD4AE000E41FC7 /* ProblemListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40AC6E0E1ADD4AE000E41FC7 /* ProblemListViewController.m */; };
+		40AC6E111ADD4AE000E41FC7 /* ProblemListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E0F1ADD4AE000E41FC7 /* ProblemListViewController.xib */; };
+		40AC6E151ADD4AF000E41FC7 /* StarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40AC6E131ADD4AF000E41FC7 /* StarViewController.m */; };
+		40AC6E161ADD4AF000E41FC7 /* StarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E141ADD4AF000E41FC7 /* StarViewController.xib */; };
+		40AC6E1A1ADD4AFF00E41FC7 /* FeedBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40AC6E181ADD4AFF00E41FC7 /* FeedBackViewController.m */; };
+		40AC6E1B1ADD4AFF00E41FC7 /* FeedBackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E191ADD4AFF00E41FC7 /* FeedBackViewController.xib */; };
+		40AC6E1F1ADD4B6700E41FC7 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40AC6E1D1ADD4B6700E41FC7 /* AboutViewController.m */; };
+		40AC6E201ADD4B6700E41FC7 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E1E1ADD4B6700E41FC7 /* AboutViewController.xib */; };
+		40AC6E611ADD549900E41FC7 /* 3Sum Closest.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E231ADD549900E41FC7 /* 3Sum Closest.html */; };
+		40AC6E621ADD549900E41FC7 /* 3Sum.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E241ADD549900E41FC7 /* 3Sum.html */; };
+		40AC6E631ADD549900E41FC7 /* 4Sum.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E251ADD549900E41FC7 /* 4Sum.html */; };
+		40AC6E641ADD549900E41FC7 /* Add Two Numbers.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E261ADD549900E41FC7 /* Add Two Numbers.html */; };
+		40AC6E651ADD549900E41FC7 /* Anagrams.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E271ADD549900E41FC7 /* Anagrams.html */; };
+		40AC6E661ADD549900E41FC7 /* Combination Sum II.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E281ADD549900E41FC7 /* Combination Sum II.html */; };
+		40AC6E671ADD549900E41FC7 /* Combination Sum.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E291ADD549900E41FC7 /* Combination Sum.html */; };
+		40AC6E681ADD549900E41FC7 /* Container With Most Water.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E2A1ADD549900E41FC7 /* Container With Most Water.html */; };
+		40AC6E691ADD549900E41FC7 /* Count and Say.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E2B1ADD549900E41FC7 /* Count and Say.html */; };
+		40AC6E6A1ADD549900E41FC7 /* Divide Two Integers.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E2C1ADD549900E41FC7 /* Divide Two Integers.html */; };
+		40AC6E6B1ADD549900E41FC7 /* First Missing Positive.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E2D1ADD549900E41FC7 /* First Missing Positive.html */; };
+		40AC6E6C1ADD549900E41FC7 /* Generate Parentheses.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E2E1ADD549900E41FC7 /* Generate Parentheses.html */; };
+		40AC6E6D1ADD549900E41FC7 /* Implement strStr().html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E2F1ADD549900E41FC7 /* Implement strStr().html */; };
+		40AC6E6E1ADD549900E41FC7 /* Integer to Roman.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E301ADD549900E41FC7 /* Integer to Roman.html */; };
+		40AC6E6F1ADD549900E41FC7 /* Jump Game II.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E311ADD549900E41FC7 /* Jump Game II.html */; };
+		40AC6E701ADD549900E41FC7 /* Letter Combinations of a Phone Number.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E321ADD549900E41FC7 /* Letter Combinations of a Phone Number.html */; };
+		40AC6E711ADD549900E41FC7 /* Longest Common Prefix.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E331ADD549900E41FC7 /* Longest Common Prefix.html */; };
+		40AC6E721ADD549900E41FC7 /* Longest Palindromic Substring.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E341ADD549900E41FC7 /* Longest Palindromic Substring.html */; };
+		40AC6E731ADD549900E41FC7 /* Longest Substring Without Repeating Characters.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E351ADD549900E41FC7 /* Longest Substring Without Repeating Characters.html */; };
+		40AC6E741ADD549900E41FC7 /* Longest Valid Parentheses.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E361ADD549900E41FC7 /* Longest Valid Parentheses.html */; };
+		40AC6E751ADD549900E41FC7 /* Median of Two Sorted Arrays.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E371ADD549900E41FC7 /* Median of Two Sorted Arrays.html */; };
+		40AC6E761ADD549900E41FC7 /* Merge k Sorted Lists.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E381ADD549900E41FC7 /* Merge k Sorted Lists.html */; };
+		40AC6E771ADD549900E41FC7 /* Multiply Strings.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E391ADD549900E41FC7 /* Multiply Strings.html */; };
+		40AC6E781ADD549900E41FC7 /* Next Permutation.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E3A1ADD549900E41FC7 /* Next Permutation.html */; };
+		40AC6E791ADD549900E41FC7 /* Palindrome Number.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E3B1ADD549900E41FC7 /* Palindrome Number.html */; };
+		40AC6E7A1ADD549900E41FC7 /* Permutations II.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E3C1ADD549900E41FC7 /* Permutations II.html */; };
+		40AC6E7B1ADD549900E41FC7 /* Permutations.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E3D1ADD549900E41FC7 /* Permutations.html */; };
+		40AC6E7C1ADD549900E41FC7 /* Pow(x, n).html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E3E1ADD549900E41FC7 /* Pow(x, n).html */; };
+		40AC6E7D1ADD549900E41FC7 /* Regular Expression Matching.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E3F1ADD549900E41FC7 /* Regular Expression Matching.html */; };
+		40AC6E7E1ADD549900E41FC7 /* Remove Duplicates from Sorted Array.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E401ADD549900E41FC7 /* Remove Duplicates from Sorted Array.html */; };
+		40AC6E7F1ADD549900E41FC7 /* Remove Element.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E411ADD549900E41FC7 /* Remove Element.html */; };
+		40AC6E801ADD549900E41FC7 /* Remove Nth Node From End of List.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E421ADD549900E41FC7 /* Remove Nth Node From End of List.html */; };
+		40AC6E811ADD549900E41FC7 /* Reverse Integer.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E431ADD549900E41FC7 /* Reverse Integer.html */; };
+		40AC6E821ADD549900E41FC7 /* Reverse Nodes in k-Group.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E441ADD549900E41FC7 /* Reverse Nodes in k-Group.html */; };
+		40AC6E831ADD549900E41FC7 /* Roman to Integer.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E451ADD549900E41FC7 /* Roman to Integer.html */; };
+		40AC6E841ADD549900E41FC7 /* Rotate Image.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E461ADD549900E41FC7 /* Rotate Image.html */; };
+		40AC6E851ADD549900E41FC7 /* Search for a Range.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E471ADD549900E41FC7 /* Search for a Range.html */; };
+		40AC6E861ADD549900E41FC7 /* Search in Rotated Sorted Array.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E481ADD549900E41FC7 /* Search in Rotated Sorted Array.html */; };
+		40AC6E871ADD549900E41FC7 /* Search Insert Position.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E491ADD549900E41FC7 /* Search Insert Position.html */; };
+		40AC6E881ADD549900E41FC7 /* String to Integer.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E4A1ADD549900E41FC7 /* String to Integer.html */; };
+		40AC6E891ADD549900E41FC7 /* Substring with Concatenation of All Words.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E4B1ADD549900E41FC7 /* Substring with Concatenation of All Words.html */; };
+		40AC6E8A1ADD549900E41FC7 /* Sudoku Solver.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E4C1ADD549900E41FC7 /* Sudoku Solver.html */; };
+		40AC6E8B1ADD549900E41FC7 /* Swap Nodes in Pairs.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E4D1ADD549900E41FC7 /* Swap Nodes in Pairs.html */; };
+		40AC6E8C1ADD549900E41FC7 /* Trapping Rain Water.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E4E1ADD549900E41FC7 /* Trapping Rain Water.html */; };
+		40AC6E8D1ADD549900E41FC7 /* Two Sum.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E4F1ADD549900E41FC7 /* Two Sum.html */; };
+		40AC6E8E1ADD549900E41FC7 /* Valid Parentheses.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E501ADD549900E41FC7 /* Valid Parentheses.html */; };
+		40AC6E8F1ADD549900E41FC7 /* Valid Sudoku.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E511ADD549900E41FC7 /* Valid Sudoku.html */; };
+		40AC6E901ADD549900E41FC7 /* Wildcard Matching.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E521ADD549900E41FC7 /* Wildcard Matching.html */; };
+		40AC6E911ADD549900E41FC7 /* ZigZag Conversion.html in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E531ADD549900E41FC7 /* ZigZag Conversion.html */; };
+		40AC6E931ADD549900E41FC7 /* highlight.pack.js in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E561ADD549900E41FC7 /* highlight.pack.js */; };
+		40AC6E941ADD549900E41FC7 /* iscroll-lite.js in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E571ADD549900E41FC7 /* iscroll-lite.js */; };
+		40AC6E981ADD549900E41FC7 /* xcode.css in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E5C1ADD549900E41FC7 /* xcode.css */; };
+		40AC6E991ADD549900E41FC7 /* phone pad.png in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E5E1ADD549900E41FC7 /* phone pad.png */; };
+		40AC6E9A1ADD549900E41FC7 /* rainwatertrap.png in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E5F1ADD549900E41FC7 /* rainwatertrap.png */; };
+		40AC6E9B1ADD549900E41FC7 /* zigzag.png in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6E601ADD549900E41FC7 /* zigzag.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		403F96151ADD3E29003299C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 403F95F31ADD3E29003299C5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 403F95FA1ADD3E29003299C5;
+			remoteInfo = LeetLocalBrowser;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		403F95FB1ADD3E29003299C5 /* LeetLocalBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeetLocalBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		403F95FF1ADD3E29003299C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		403F96001ADD3E29003299C5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		403F96021ADD3E29003299C5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		403F96031ADD3E29003299C5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		403F96051ADD3E29003299C5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		403F96061ADD3E29003299C5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		403F96091ADD3E29003299C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		403F960B1ADD3E29003299C5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		403F960E1ADD3E29003299C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		403F96141ADD3E29003299C5 /* LeetLocalBrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeetLocalBrowserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		403F96191ADD3E29003299C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		403F961A1ADD3E29003299C5 /* LeetLocalBrowserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeetLocalBrowserTests.m; sourceTree = "<group>"; };
+		403F96241ADD3E3C003299C5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		403F96261ADD3E43003299C5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		403F96291ADD3EA7003299C5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		403F962C1ADD4168003299C5 /* ICSDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSDrawerController.h; sourceTree = "<group>"; };
+		403F962D1ADD4168003299C5 /* ICSDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICSDrawerController.m; sourceTree = "<group>"; };
+		403F962E1ADD4168003299C5 /* ICSDropShadowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSDropShadowView.h; sourceTree = "<group>"; };
+		403F962F1ADD4168003299C5 /* ICSDropShadowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICSDropShadowView.m; sourceTree = "<group>"; };
+		403F96311ADD4168003299C5 /* LaunchImageTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchImageTransition.h; sourceTree = "<group>"; };
+		403F96321ADD4168003299C5 /* LaunchImageTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchImageTransition.m; sourceTree = "<group>"; };
+		403F963C1ADD41F6003299C5 /* ProblemStruct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemStruct.h; sourceTree = "<group>"; };
+		403F963D1ADD41F6003299C5 /* ProblemStruct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemStruct.m; sourceTree = "<group>"; };
+		403F963F1ADD4204003299C5 /* FileTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileTool.h; sourceTree = "<group>"; };
+		403F96401ADD4204003299C5 /* FileTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileTool.m; sourceTree = "<group>"; };
+		403F96431ADD439E003299C5 /* DrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawerViewController.h; sourceTree = "<group>"; };
+		403F96441ADD439E003299C5 /* DrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawerViewController.m; sourceTree = "<group>"; };
+		40AC6E001ADD4AAD00E41FC7 /* CodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeViewController.h; sourceTree = "<group>"; };
+		40AC6E011ADD4AAD00E41FC7 /* CodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodeViewController.m; sourceTree = "<group>"; };
+		40AC6E021ADD4AAD00E41FC7 /* CodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CodeViewController.xib; sourceTree = "<group>"; };
+		40AC6E051ADD4AC000E41FC7 /* PickOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickOneViewController.h; sourceTree = "<group>"; };
+		40AC6E061ADD4AC000E41FC7 /* PickOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickOneViewController.m; sourceTree = "<group>"; };
+		40AC6E071ADD4AC000E41FC7 /* PickOneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickOneViewController.xib; sourceTree = "<group>"; };
+		40AC6E0D1ADD4AE000E41FC7 /* ProblemListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemListViewController.h; sourceTree = "<group>"; };
+		40AC6E0E1ADD4AE000E41FC7 /* ProblemListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemListViewController.m; sourceTree = "<group>"; };
+		40AC6E0F1ADD4AE000E41FC7 /* ProblemListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProblemListViewController.xib; sourceTree = "<group>"; };
+		40AC6E121ADD4AF000E41FC7 /* StarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarViewController.h; sourceTree = "<group>"; };
+		40AC6E131ADD4AF000E41FC7 /* StarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StarViewController.m; sourceTree = "<group>"; };
+		40AC6E141ADD4AF000E41FC7 /* StarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StarViewController.xib; sourceTree = "<group>"; };
+		40AC6E171ADD4AFF00E41FC7 /* FeedBackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedBackViewController.h; sourceTree = "<group>"; };
+		40AC6E181ADD4AFF00E41FC7 /* FeedBackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedBackViewController.m; sourceTree = "<group>"; };
+		40AC6E191ADD4AFF00E41FC7 /* FeedBackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedBackViewController.xib; sourceTree = "<group>"; };
+		40AC6E1C1ADD4B6700E41FC7 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		40AC6E1D1ADD4B6700E41FC7 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		40AC6E1E1ADD4B6700E41FC7 /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
+		40AC6E231ADD549900E41FC7 /* 3Sum Closest.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "3Sum Closest.html"; sourceTree = "<group>"; };
+		40AC6E241ADD549900E41FC7 /* 3Sum.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = 3Sum.html; sourceTree = "<group>"; };
+		40AC6E251ADD549900E41FC7 /* 4Sum.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = 4Sum.html; sourceTree = "<group>"; };
+		40AC6E261ADD549900E41FC7 /* Add Two Numbers.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Add Two Numbers.html"; sourceTree = "<group>"; };
+		40AC6E271ADD549900E41FC7 /* Anagrams.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Anagrams.html; sourceTree = "<group>"; };
+		40AC6E281ADD549900E41FC7 /* Combination Sum II.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Combination Sum II.html"; sourceTree = "<group>"; };
+		40AC6E291ADD549900E41FC7 /* Combination Sum.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Combination Sum.html"; sourceTree = "<group>"; };
+		40AC6E2A1ADD549900E41FC7 /* Container With Most Water.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Container With Most Water.html"; sourceTree = "<group>"; };
+		40AC6E2B1ADD549900E41FC7 /* Count and Say.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Count and Say.html"; sourceTree = "<group>"; };
+		40AC6E2C1ADD549900E41FC7 /* Divide Two Integers.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Divide Two Integers.html"; sourceTree = "<group>"; };
+		40AC6E2D1ADD549900E41FC7 /* First Missing Positive.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "First Missing Positive.html"; sourceTree = "<group>"; };
+		40AC6E2E1ADD549900E41FC7 /* Generate Parentheses.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Generate Parentheses.html"; sourceTree = "<group>"; };
+		40AC6E2F1ADD549900E41FC7 /* Implement strStr().html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Implement strStr().html"; sourceTree = "<group>"; };
+		40AC6E301ADD549900E41FC7 /* Integer to Roman.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Integer to Roman.html"; sourceTree = "<group>"; };
+		40AC6E311ADD549900E41FC7 /* Jump Game II.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Jump Game II.html"; sourceTree = "<group>"; };
+		40AC6E321ADD549900E41FC7 /* Letter Combinations of a Phone Number.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Letter Combinations of a Phone Number.html"; sourceTree = "<group>"; };
+		40AC6E331ADD549900E41FC7 /* Longest Common Prefix.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Longest Common Prefix.html"; sourceTree = "<group>"; };
+		40AC6E341ADD549900E41FC7 /* Longest Palindromic Substring.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Longest Palindromic Substring.html"; sourceTree = "<group>"; };
+		40AC6E351ADD549900E41FC7 /* Longest Substring Without Repeating Characters.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Longest Substring Without Repeating Characters.html"; sourceTree = "<group>"; };
+		40AC6E361ADD549900E41FC7 /* Longest Valid Parentheses.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Longest Valid Parentheses.html"; sourceTree = "<group>"; };
+		40AC6E371ADD549900E41FC7 /* Median of Two Sorted Arrays.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Median of Two Sorted Arrays.html"; sourceTree = "<group>"; };
+		40AC6E381ADD549900E41FC7 /* Merge k Sorted Lists.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Merge k Sorted Lists.html"; sourceTree = "<group>"; };
+		40AC6E391ADD549900E41FC7 /* Multiply Strings.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Multiply Strings.html"; sourceTree = "<group>"; };
+		40AC6E3A1ADD549900E41FC7 /* Next Permutation.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Next Permutation.html"; sourceTree = "<group>"; };
+		40AC6E3B1ADD549900E41FC7 /* Palindrome Number.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Palindrome Number.html"; sourceTree = "<group>"; };
+		40AC6E3C1ADD549900E41FC7 /* Permutations II.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Permutations II.html"; sourceTree = "<group>"; };
+		40AC6E3D1ADD549900E41FC7 /* Permutations.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Permutations.html; sourceTree = "<group>"; };
+		40AC6E3E1ADD549900E41FC7 /* Pow(x, n).html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Pow(x, n).html"; sourceTree = "<group>"; };
+		40AC6E3F1ADD549900E41FC7 /* Regular Expression Matching.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Regular Expression Matching.html"; sourceTree = "<group>"; };
+		40AC6E401ADD549900E41FC7 /* Remove Duplicates from Sorted Array.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Remove Duplicates from Sorted Array.html"; sourceTree = "<group>"; };
+		40AC6E411ADD549900E41FC7 /* Remove Element.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Remove Element.html"; sourceTree = "<group>"; };
+		40AC6E421ADD549900E41FC7 /* Remove Nth Node From End of List.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Remove Nth Node From End of List.html"; sourceTree = "<group>"; };
+		40AC6E431ADD549900E41FC7 /* Reverse Integer.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Reverse Integer.html"; sourceTree = "<group>"; };
+		40AC6E441ADD549900E41FC7 /* Reverse Nodes in k-Group.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Reverse Nodes in k-Group.html"; sourceTree = "<group>"; };
+		40AC6E451ADD549900E41FC7 /* Roman to Integer.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Roman to Integer.html"; sourceTree = "<group>"; };
+		40AC6E461ADD549900E41FC7 /* Rotate Image.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Rotate Image.html"; sourceTree = "<group>"; };
+		40AC6E471ADD549900E41FC7 /* Search for a Range.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Search for a Range.html"; sourceTree = "<group>"; };
+		40AC6E481ADD549900E41FC7 /* Search in Rotated Sorted Array.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Search in Rotated Sorted Array.html"; sourceTree = "<group>"; };
+		40AC6E491ADD549900E41FC7 /* Search Insert Position.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Search Insert Position.html"; sourceTree = "<group>"; };
+		40AC6E4A1ADD549900E41FC7 /* String to Integer.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "String to Integer.html"; sourceTree = "<group>"; };
+		40AC6E4B1ADD549900E41FC7 /* Substring with Concatenation of All Words.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Substring with Concatenation of All Words.html"; sourceTree = "<group>"; };
+		40AC6E4C1ADD549900E41FC7 /* Sudoku Solver.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Sudoku Solver.html"; sourceTree = "<group>"; };
+		40AC6E4D1ADD549900E41FC7 /* Swap Nodes in Pairs.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Swap Nodes in Pairs.html"; sourceTree = "<group>"; };
+		40AC6E4E1ADD549900E41FC7 /* Trapping Rain Water.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Trapping Rain Water.html"; sourceTree = "<group>"; };
+		40AC6E4F1ADD549900E41FC7 /* Two Sum.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Two Sum.html"; sourceTree = "<group>"; };
+		40AC6E501ADD549900E41FC7 /* Valid Parentheses.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Valid Parentheses.html"; sourceTree = "<group>"; };
+		40AC6E511ADD549900E41FC7 /* Valid Sudoku.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Valid Sudoku.html"; sourceTree = "<group>"; };
+		40AC6E521ADD549900E41FC7 /* Wildcard Matching.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Wildcard Matching.html"; sourceTree = "<group>"; };
+		40AC6E531ADD549900E41FC7 /* ZigZag Conversion.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "ZigZag Conversion.html"; sourceTree = "<group>"; };
+		40AC6E561ADD549900E41FC7 /* highlight.pack.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = highlight.pack.js; sourceTree = "<group>"; };
+		40AC6E571ADD549900E41FC7 /* iscroll-lite.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "iscroll-lite.js"; sourceTree = "<group>"; };
+		40AC6E5C1ADD549900E41FC7 /* xcode.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = xcode.css; sourceTree = "<group>"; };
+		40AC6E5E1ADD549900E41FC7 /* phone pad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "phone pad.png"; sourceTree = "<group>"; };
+		40AC6E5F1ADD549900E41FC7 /* rainwatertrap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rainwatertrap.png; sourceTree = "<group>"; };
+		40AC6E601ADD549900E41FC7 /* zigzag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zigzag.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		403F95F81ADD3E29003299C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				403F962A1ADD3EA7003299C5 /* CoreGraphics.framework in Frameworks */,
+				403F96271ADD3E43003299C5 /* Foundation.framework in Frameworks */,
+				403F96251ADD3E3C003299C5 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		403F96111ADD3E29003299C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		403F95F21ADD3E29003299C5 = {
+			isa = PBXGroup;
+			children = (
+				40AC6E211ADD549900E41FC7 /* Resources */,
+				403F95FD1ADD3E29003299C5 /* LeetLocalBrowser */,
+				403F96171ADD3E29003299C5 /* LeetLocalBrowserTests */,
+				403F96281ADD3E75003299C5 /* Frameworks */,
+				403F95FC1ADD3E29003299C5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		403F95FC1ADD3E29003299C5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				403F95FB1ADD3E29003299C5 /* LeetLocalBrowser.app */,
+				403F96141ADD3E29003299C5 /* LeetLocalBrowserTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		403F95FD1ADD3E29003299C5 /* LeetLocalBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				403F963A1ADD41CE003299C5 /* ProblemStruct */,
+				403F963B1ADD41D7003299C5 /* FileTool */,
+				403F962B1ADD4168003299C5 /* ICSDrawerController */,
+				403F96421ADD4252003299C5 /* ViewControllers */,
+				403F96301ADD4168003299C5 /* LaunchImageTransition */,
+				403F95FE1ADD3E29003299C5 /* Supporting Files */,
+			);
+			path = LeetLocalBrowser;
+			sourceTree = "<group>";
+		};
+		403F95FE1ADD3E29003299C5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				403F96021ADD3E29003299C5 /* AppDelegate.h */,
+				403F96031ADD3E29003299C5 /* AppDelegate.m */,
+				403F960B1ADD3E29003299C5 /* Images.xcassets */,
+				403F96081ADD3E29003299C5 /* Main.storyboard */,
+				403F960D1ADD3E29003299C5 /* LaunchScreen.xib */,
+				403F95FF1ADD3E29003299C5 /* Info.plist */,
+				403F96001ADD3E29003299C5 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		403F96171ADD3E29003299C5 /* LeetLocalBrowserTests */ = {
+			isa = PBXGroup;
+			children = (
+				403F961A1ADD3E29003299C5 /* LeetLocalBrowserTests.m */,
+				403F96181ADD3E29003299C5 /* Supporting Files */,
+			);
+			path = LeetLocalBrowserTests;
+			sourceTree = "<group>";
+		};
+		403F96181ADD3E29003299C5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				403F96191ADD3E29003299C5 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		403F96281ADD3E75003299C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				403F96291ADD3EA7003299C5 /* CoreGraphics.framework */,
+				403F96241ADD3E3C003299C5 /* UIKit.framework */,
+				403F96261ADD3E43003299C5 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		403F962B1ADD4168003299C5 /* ICSDrawerController */ = {
+			isa = PBXGroup;
+			children = (
+				403F962C1ADD4168003299C5 /* ICSDrawerController.h */,
+				403F962D1ADD4168003299C5 /* ICSDrawerController.m */,
+				403F962E1ADD4168003299C5 /* ICSDropShadowView.h */,
+				403F962F1ADD4168003299C5 /* ICSDropShadowView.m */,
+			);
+			path = ICSDrawerController;
+			sourceTree = "<group>";
+		};
+		403F96301ADD4168003299C5 /* LaunchImageTransition */ = {
+			isa = PBXGroup;
+			children = (
+				403F96311ADD4168003299C5 /* LaunchImageTransition.h */,
+				403F96321ADD4168003299C5 /* LaunchImageTransition.m */,
+			);
+			path = LaunchImageTransition;
+			sourceTree = "<group>";
+		};
+		403F963A1ADD41CE003299C5 /* ProblemStruct */ = {
+			isa = PBXGroup;
+			children = (
+				403F963C1ADD41F6003299C5 /* ProblemStruct.h */,
+				403F963D1ADD41F6003299C5 /* ProblemStruct.m */,
+			);
+			name = ProblemStruct;
+			sourceTree = "<group>";
+		};
+		403F963B1ADD41D7003299C5 /* FileTool */ = {
+			isa = PBXGroup;
+			children = (
+				403F963F1ADD4204003299C5 /* FileTool.h */,
+				403F96401ADD4204003299C5 /* FileTool.m */,
+			);
+			name = FileTool;
+			sourceTree = "<group>";
+		};
+		403F96421ADD4252003299C5 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				403F96051ADD3E29003299C5 /* ViewController.h */,
+				403F96061ADD3E29003299C5 /* ViewController.m */,
+				403F96431ADD439E003299C5 /* DrawerViewController.h */,
+				403F96441ADD439E003299C5 /* DrawerViewController.m */,
+				40AC6E001ADD4AAD00E41FC7 /* CodeViewController.h */,
+				40AC6E011ADD4AAD00E41FC7 /* CodeViewController.m */,
+				40AC6E021ADD4AAD00E41FC7 /* CodeViewController.xib */,
+				40AC6E051ADD4AC000E41FC7 /* PickOneViewController.h */,
+				40AC6E061ADD4AC000E41FC7 /* PickOneViewController.m */,
+				40AC6E071ADD4AC000E41FC7 /* PickOneViewController.xib */,
+				40AC6E0D1ADD4AE000E41FC7 /* ProblemListViewController.h */,
+				40AC6E0E1ADD4AE000E41FC7 /* ProblemListViewController.m */,
+				40AC6E0F1ADD4AE000E41FC7 /* ProblemListViewController.xib */,
+				40AC6E121ADD4AF000E41FC7 /* StarViewController.h */,
+				40AC6E131ADD4AF000E41FC7 /* StarViewController.m */,
+				40AC6E141ADD4AF000E41FC7 /* StarViewController.xib */,
+				40AC6E171ADD4AFF00E41FC7 /* FeedBackViewController.h */,
+				40AC6E181ADD4AFF00E41FC7 /* FeedBackViewController.m */,
+				40AC6E191ADD4AFF00E41FC7 /* FeedBackViewController.xib */,
+				40AC6E1C1ADD4B6700E41FC7 /* AboutViewController.h */,
+				40AC6E1D1ADD4B6700E41FC7 /* AboutViewController.m */,
+				40AC6E1E1ADD4B6700E41FC7 /* AboutViewController.xib */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		40AC6E211ADD549900E41FC7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				40AC6E221ADD549900E41FC7 /* code */,
+				40AC6E541ADD549900E41FC7 /* highlight */,
+				40AC6E5D1ADD549900E41FC7 /* image */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		40AC6E221ADD549900E41FC7 /* code */ = {
+			isa = PBXGroup;
+			children = (
+				40AC6E231ADD549900E41FC7 /* 3Sum Closest.html */,
+				40AC6E241ADD549900E41FC7 /* 3Sum.html */,
+				40AC6E251ADD549900E41FC7 /* 4Sum.html */,
+				40AC6E261ADD549900E41FC7 /* Add Two Numbers.html */,
+				40AC6E271ADD549900E41FC7 /* Anagrams.html */,
+				40AC6E281ADD549900E41FC7 /* Combination Sum II.html */,
+				40AC6E291ADD549900E41FC7 /* Combination Sum.html */,
+				40AC6E2A1ADD549900E41FC7 /* Container With Most Water.html */,
+				40AC6E2B1ADD549900E41FC7 /* Count and Say.html */,
+				40AC6E2C1ADD549900E41FC7 /* Divide Two Integers.html */,
+				40AC6E2D1ADD549900E41FC7 /* First Missing Positive.html */,
+				40AC6E2E1ADD549900E41FC7 /* Generate Parentheses.html */,
+				40AC6E2F1ADD549900E41FC7 /* Implement strStr().html */,
+				40AC6E301ADD549900E41FC7 /* Integer to Roman.html */,
+				40AC6E311ADD549900E41FC7 /* Jump Game II.html */,
+				40AC6E321ADD549900E41FC7 /* Letter Combinations of a Phone Number.html */,
+				40AC6E331ADD549900E41FC7 /* Longest Common Prefix.html */,
+				40AC6E341ADD549900E41FC7 /* Longest Palindromic Substring.html */,
+				40AC6E351ADD549900E41FC7 /* Longest Substring Without Repeating Characters.html */,
+				40AC6E361ADD549900E41FC7 /* Longest Valid Parentheses.html */,
+				40AC6E371ADD549900E41FC7 /* Median of Two Sorted Arrays.html */,
+				40AC6E381ADD549900E41FC7 /* Merge k Sorted Lists.html */,
+				40AC6E391ADD549900E41FC7 /* Multiply Strings.html */,
+				40AC6E3A1ADD549900E41FC7 /* Next Permutation.html */,
+				40AC6E3B1ADD549900E41FC7 /* Palindrome Number.html */,
+				40AC6E3C1ADD549900E41FC7 /* Permutations II.html */,
+				40AC6E3D1ADD549900E41FC7 /* Permutations.html */,
+				40AC6E3E1ADD549900E41FC7 /* Pow(x, n).html */,
+				40AC6E3F1ADD549900E41FC7 /* Regular Expression Matching.html */,
+				40AC6E401ADD549900E41FC7 /* Remove Duplicates from Sorted Array.html */,
+				40AC6E411ADD549900E41FC7 /* Remove Element.html */,
+				40AC6E421ADD549900E41FC7 /* Remove Nth Node From End of List.html */,
+				40AC6E431ADD549900E41FC7 /* Reverse Integer.html */,
+				40AC6E441ADD549900E41FC7 /* Reverse Nodes in k-Group.html */,
+				40AC6E451ADD549900E41FC7 /* Roman to Integer.html */,
+				40AC6E461ADD549900E41FC7 /* Rotate Image.html */,
+				40AC6E471ADD549900E41FC7 /* Search for a Range.html */,
+				40AC6E481ADD549900E41FC7 /* Search in Rotated Sorted Array.html */,
+				40AC6E491ADD549900E41FC7 /* Search Insert Position.html */,
+				40AC6E4A1ADD549900E41FC7 /* String to Integer.html */,
+				40AC6E4B1ADD549900E41FC7 /* Substring with Concatenation of All Words.html */,
+				40AC6E4C1ADD549900E41FC7 /* Sudoku Solver.html */,
+				40AC6E4D1ADD549900E41FC7 /* Swap Nodes in Pairs.html */,
+				40AC6E4E1ADD549900E41FC7 /* Trapping Rain Water.html */,
+				40AC6E4F1ADD549900E41FC7 /* Two Sum.html */,
+				40AC6E501ADD549900E41FC7 /* Valid Parentheses.html */,
+				40AC6E511ADD549900E41FC7 /* Valid Sudoku.html */,
+				40AC6E521ADD549900E41FC7 /* Wildcard Matching.html */,
+				40AC6E531ADD549900E41FC7 /* ZigZag Conversion.html */,
+			);
+			path = code;
+			sourceTree = "<group>";
+		};
+		40AC6E541ADD549900E41FC7 /* highlight */ = {
+			isa = PBXGroup;
+			children = (
+				40AC6E561ADD549900E41FC7 /* highlight.pack.js */,
+				40AC6E571ADD549900E41FC7 /* iscroll-lite.js */,
+				40AC6E5B1ADD549900E41FC7 /* styles */,
+			);
+			path = highlight;
+			sourceTree = "<group>";
+		};
+		40AC6E5B1ADD549900E41FC7 /* styles */ = {
+			isa = PBXGroup;
+			children = (
+				40AC6E5C1ADD549900E41FC7 /* xcode.css */,
+			);
+			path = styles;
+			sourceTree = "<group>";
+		};
+		40AC6E5D1ADD549900E41FC7 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				40AC6E5E1ADD549900E41FC7 /* phone pad.png */,
+				40AC6E5F1ADD549900E41FC7 /* rainwatertrap.png */,
+				40AC6E601ADD549900E41FC7 /* zigzag.png */,
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		403F95FA1ADD3E29003299C5 /* LeetLocalBrowser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 403F961E1ADD3E29003299C5 /* Build configuration list for PBXNativeTarget "LeetLocalBrowser" */;
+			buildPhases = (
+				403F95F71ADD3E29003299C5 /* Sources */,
+				403F95F81ADD3E29003299C5 /* Frameworks */,
+				403F95F91ADD3E29003299C5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LeetLocalBrowser;
+			productName = LeetLocalBrowser;
+			productReference = 403F95FB1ADD3E29003299C5 /* LeetLocalBrowser.app */;
+			productType = "com.apple.product-type.application";
+		};
+		403F96131ADD3E29003299C5 /* LeetLocalBrowserTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 403F96211ADD3E29003299C5 /* Build configuration list for PBXNativeTarget "LeetLocalBrowserTests" */;
+			buildPhases = (
+				403F96101ADD3E29003299C5 /* Sources */,
+				403F96111ADD3E29003299C5 /* Frameworks */,
+				403F96121ADD3E29003299C5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				403F96161ADD3E29003299C5 /* PBXTargetDependency */,
+			);
+			name = LeetLocalBrowserTests;
+			productName = LeetLocalBrowserTests;
+			productReference = 403F96141ADD3E29003299C5 /* LeetLocalBrowserTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		403F95F31ADD3E29003299C5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = "Black Mamba";
+				TargetAttributes = {
+					403F95FA1ADD3E29003299C5 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					403F96131ADD3E29003299C5 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 403F95FA1ADD3E29003299C5;
+					};
+				};
+			};
+			buildConfigurationList = 403F95F61ADD3E29003299C5 /* Build configuration list for PBXProject "LeetLocalBrowser" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 403F95F21ADD3E29003299C5;
+			productRefGroup = 403F95FC1ADD3E29003299C5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				403F95FA1ADD3E29003299C5 /* LeetLocalBrowser */,
+				403F96131ADD3E29003299C5 /* LeetLocalBrowserTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		403F95F91ADD3E29003299C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40AC6E681ADD549900E41FC7 /* Container With Most Water.html in Resources */,
+				40AC6E7E1ADD549900E41FC7 /* Remove Duplicates from Sorted Array.html in Resources */,
+				40AC6E7C1ADD549900E41FC7 /* Pow(x, n).html in Resources */,
+				40AC6E931ADD549900E41FC7 /* highlight.pack.js in Resources */,
+				40AC6E651ADD549900E41FC7 /* Anagrams.html in Resources */,
+				40AC6E991ADD549900E41FC7 /* phone pad.png in Resources */,
+				40AC6E771ADD549900E41FC7 /* Multiply Strings.html in Resources */,
+				40AC6E701ADD549900E41FC7 /* Letter Combinations of a Phone Number.html in Resources */,
+				40AC6E9A1ADD549900E41FC7 /* rainwatertrap.png in Resources */,
+				40AC6E8A1ADD549900E41FC7 /* Sudoku Solver.html in Resources */,
+				40AC6E091ADD4AC000E41FC7 /* PickOneViewController.xib in Resources */,
+				40AC6E861ADD549900E41FC7 /* Search in Rotated Sorted Array.html in Resources */,
+				40AC6E911ADD549900E41FC7 /* ZigZag Conversion.html in Resources */,
+				40AC6E621ADD549900E41FC7 /* 3Sum.html in Resources */,
+				40AC6E6F1ADD549900E41FC7 /* Jump Game II.html in Resources */,
+				40AC6E761ADD549900E41FC7 /* Merge k Sorted Lists.html in Resources */,
+				403F960A1ADD3E29003299C5 /* Main.storyboard in Resources */,
+				40AC6E791ADD549900E41FC7 /* Palindrome Number.html in Resources */,
+				40AC6E901ADD549900E41FC7 /* Wildcard Matching.html in Resources */,
+				40AC6E941ADD549900E41FC7 /* iscroll-lite.js in Resources */,
+				40AC6E6E1ADD549900E41FC7 /* Integer to Roman.html in Resources */,
+				40AC6E821ADD549900E41FC7 /* Reverse Nodes in k-Group.html in Resources */,
+				40AC6E811ADD549900E41FC7 /* Reverse Integer.html in Resources */,
+				40AC6E981ADD549900E41FC7 /* xcode.css in Resources */,
+				40AC6E851ADD549900E41FC7 /* Search for a Range.html in Resources */,
+				40AC6E661ADD549900E41FC7 /* Combination Sum II.html in Resources */,
+				40AC6E6D1ADD549900E41FC7 /* Implement strStr().html in Resources */,
+				40AC6E161ADD4AF000E41FC7 /* StarViewController.xib in Resources */,
+				40AC6E111ADD4AE000E41FC7 /* ProblemListViewController.xib in Resources */,
+				40AC6E8D1ADD549900E41FC7 /* Two Sum.html in Resources */,
+				40AC6E741ADD549900E41FC7 /* Longest Valid Parentheses.html in Resources */,
+				40AC6E8E1ADD549900E41FC7 /* Valid Parentheses.html in Resources */,
+				40AC6E631ADD549900E41FC7 /* 4Sum.html in Resources */,
+				40AC6E721ADD549900E41FC7 /* Longest Palindromic Substring.html in Resources */,
+				40AC6E731ADD549900E41FC7 /* Longest Substring Without Repeating Characters.html in Resources */,
+				40AC6E041ADD4AAD00E41FC7 /* CodeViewController.xib in Resources */,
+				40AC6E641ADD549900E41FC7 /* Add Two Numbers.html in Resources */,
+				40AC6E781ADD549900E41FC7 /* Next Permutation.html in Resources */,
+				40AC6E8F1ADD549900E41FC7 /* Valid Sudoku.html in Resources */,
+				40AC6E6B1ADD549900E41FC7 /* First Missing Positive.html in Resources */,
+				40AC6E7D1ADD549900E41FC7 /* Regular Expression Matching.html in Resources */,
+				40AC6E871ADD549900E41FC7 /* Search Insert Position.html in Resources */,
+				40AC6E891ADD549900E41FC7 /* Substring with Concatenation of All Words.html in Resources */,
+				40AC6E8C1ADD549900E41FC7 /* Trapping Rain Water.html in Resources */,
+				40AC6E7B1ADD549900E41FC7 /* Permutations.html in Resources */,
+				40AC6E711ADD549900E41FC7 /* Longest Common Prefix.html in Resources */,
+				403F960F1ADD3E29003299C5 /* LaunchScreen.xib in Resources */,
+				403F960C1ADD3E29003299C5 /* Images.xcassets in Resources */,
+				40AC6E7F1ADD549900E41FC7 /* Remove Element.html in Resources */,
+				40AC6E201ADD4B6700E41FC7 /* AboutViewController.xib in Resources */,
+				40AC6E801ADD549900E41FC7 /* Remove Nth Node From End of List.html in Resources */,
+				40AC6E691ADD549900E41FC7 /* Count and Say.html in Resources */,
+				40AC6E751ADD549900E41FC7 /* Median of Two Sorted Arrays.html in Resources */,
+				40AC6E1B1ADD4AFF00E41FC7 /* FeedBackViewController.xib in Resources */,
+				40AC6E831ADD549900E41FC7 /* Roman to Integer.html in Resources */,
+				40AC6E7A1ADD549900E41FC7 /* Permutations II.html in Resources */,
+				40AC6E8B1ADD549900E41FC7 /* Swap Nodes in Pairs.html in Resources */,
+				40AC6E6C1ADD549900E41FC7 /* Generate Parentheses.html in Resources */,
+				40AC6E881ADD549900E41FC7 /* String to Integer.html in Resources */,
+				40AC6E841ADD549900E41FC7 /* Rotate Image.html in Resources */,
+				40AC6E611ADD549900E41FC7 /* 3Sum Closest.html in Resources */,
+				40AC6E9B1ADD549900E41FC7 /* zigzag.png in Resources */,
+				40AC6E671ADD549900E41FC7 /* Combination Sum.html in Resources */,
+				40AC6E6A1ADD549900E41FC7 /* Divide Two Integers.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		403F96121ADD3E29003299C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		403F95F71ADD3E29003299C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				403F96451ADD439E003299C5 /* DrawerViewController.m in Sources */,
+				403F96331ADD4168003299C5 /* ICSDrawerController.m in Sources */,
+				40AC6E151ADD4AF000E41FC7 /* StarViewController.m in Sources */,
+				403F963E1ADD41F6003299C5 /* ProblemStruct.m in Sources */,
+				403F96071ADD3E29003299C5 /* ViewController.m in Sources */,
+				403F96411ADD4204003299C5 /* FileTool.m in Sources */,
+				40AC6E1F1ADD4B6700E41FC7 /* AboutViewController.m in Sources */,
+				40AC6E1A1ADD4AFF00E41FC7 /* FeedBackViewController.m in Sources */,
+				40AC6E031ADD4AAD00E41FC7 /* CodeViewController.m in Sources */,
+				40AC6E101ADD4AE000E41FC7 /* ProblemListViewController.m in Sources */,
+				403F96041ADD3E29003299C5 /* AppDelegate.m in Sources */,
+				40AC6E081ADD4AC000E41FC7 /* PickOneViewController.m in Sources */,
+				403F96011ADD3E29003299C5 /* main.m in Sources */,
+				403F96341ADD4168003299C5 /* ICSDropShadowView.m in Sources */,
+				403F96351ADD4168003299C5 /* LaunchImageTransition.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		403F96101ADD3E29003299C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				403F961B1ADD3E29003299C5 /* LeetLocalBrowserTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		403F96161ADD3E29003299C5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 403F95FA1ADD3E29003299C5 /* LeetLocalBrowser */;
+			targetProxy = 403F96151ADD3E29003299C5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		403F96081ADD3E29003299C5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				403F96091ADD3E29003299C5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		403F960D1ADD3E29003299C5 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				403F960E1ADD3E29003299C5 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		403F961C1ADD3E29003299C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		403F961D1ADD3E29003299C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		403F961F1ADD3E29003299C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LeetLocalBrowser/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		403F96201ADD3E29003299C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LeetLocalBrowser/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		403F96221ADD3E29003299C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = LeetLocalBrowserTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LeetLocalBrowser.app/LeetLocalBrowser";
+			};
+			name = Debug;
+		};
+		403F96231ADD3E29003299C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = LeetLocalBrowserTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LeetLocalBrowser.app/LeetLocalBrowser";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		403F95F61ADD3E29003299C5 /* Build configuration list for PBXProject "LeetLocalBrowser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				403F961C1ADD3E29003299C5 /* Debug */,
+				403F961D1ADD3E29003299C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		403F961E1ADD3E29003299C5 /* Build configuration list for PBXNativeTarget "LeetLocalBrowser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				403F961F1ADD3E29003299C5 /* Debug */,
+				403F96201ADD3E29003299C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		403F96211ADD3E29003299C5 /* Build configuration list for PBXNativeTarget "LeetLocalBrowserTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				403F96221ADD3E29003299C5 /* Debug */,
+				403F96231ADD3E29003299C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 403F95F31ADD3E29003299C5 /* Project object */;
+}

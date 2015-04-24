@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reverse Nodes in k-Group</title>
+    <script type="text/javascript" src="highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" type="text/css" href="xcode.css">
+</head>
+<body>
+<h3>Reverse Nodes in k-Group</h3>
+<div class="description" font-size="5px">
+    <p><font size="2">Given a linked list, reverse the nodes of a linked list k at a time and return its modified list. If the number of nodes is not a multiple of k then left-out nodes in the end should remain as it is. You may not alter the values in the nodes, only nodes itself may be changed.</font></p>
+    <p><font size="2">Only constant memory is allowed.</font></p>
+    <p><font size="2">For example,</font></p>
+    <p><font size="2">Given this linked list: 1->2->3->4->5</font></p>
+    <p><font size="2">For k = 2, you should return: 2->1->4->3->5</font></p>
+    <p><font size="2">For k = 3, you should return: 3->2->1->4->5</font></p>  
+</div>
+<div style = "overflow: scroll">  
+    <pre><code>
+class Solution {
+public:
+    ListNode *reverseKGroup(ListNode *head, int k) {
+        if (head == NULL) {
+            return head;
+        }
+        ListNode *dummy_head = new ListNode(0);
+        dummy_head->next = head;
+        ListNode *pre, *current, *next;
+        int reverseTimes = 0;
+        int length = 0;
+        ListNode *index = head;
+        while(index != NULL) {
+            index = index->next;
+            ++length;
+        }
+        reverseTimes = length/k;
+
+        pre = NULL;
+        current = head;
+        next = NULL;
+        ListNode *end;
+        end = NULL;
+        if(reverseTimes > 0) {
+            int group_length = k;
+            end = current;
+            while (group_length != 0) {
+                next = current->next;
+                current->next = pre;
+                pre = current;
+                current = next;
+                --group_length;
+            }
+            dummy_head->next = pre;
+            end->next = reverseKGroup(current, k);          
+        }
+        else {
+            return head;
+        }
+        return dummy_head->next;
+    }
+
+};
+    </code></pre>
+</div>
+
+</body>
+</html>

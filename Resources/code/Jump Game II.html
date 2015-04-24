@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jump Game II</title>
+    <script type="text/javascript" src="highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" type="text/css" href="xcode.css">
+</head>
+<body>
+<h3>Jump Game II</h3>
+<div class="description" font-size="5px">
+    <p><font size="2">Given an array of non-negative integers, you are initially positioned at the first index of the array.</font></p>
+    <p><font size="2">Each element in the array represents your maximum jump length at that position.</font></p>
+    <p><font size="2">For example:</font></p>
+    <p><font size="2">Given array A = [2, 3, 1, 1, 4]</font></p>
+    <p><font size="2">The minimum number of jumps to reach the last index is 2. (Jump 1 step from index 0 to 1, then 3 steps to the last index.)</font></p>
+    
+</div>
+<div style = "overflow: scroll">  
+    <pre><code>
+class Solution {
+public:
+    int jump(int A[], int n) {
+        int last = 0; //maxium distance that can be reached by numOfSteps
+        int current = 0; //maxium distance that can be reached by numOfSteps + 1 
+        int numOfSteps = 0;
+        
+        for(int i = 0; i < n; ++i) {
+            if(i > last) {
+                last = current;
+                ++numOfSteps;
+            }
+            current = max(current, i + A[i]);
+        }
+        return numOfSteps;
+    }
+};
+    </code></pre>
+</div>
+
+</body>
+</html>

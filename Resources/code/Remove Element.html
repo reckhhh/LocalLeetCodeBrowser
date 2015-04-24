@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Remove Element</title>
+    <script type="text/javascript" src="highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" type="text/css" href="xcode.css">
+</head>
+<body>
+<h3>Remove Element</h3>
+<div class="description" font-size="5px">
+    <p><font size="2">Given an array and a value, remove all instances of that value in place and return the new length.</font></p>
+    <p><font size="2">The order of elements can be changed. It doesn't matter what you leave beyond the new length.</font></p>
+</div>
+<div style = "overflow: scroll">  
+    <pre><code>
+class Solution {
+public:
+    int removeElement(int A[], int n, int elem) {
+        int count = 0;
+        for(int i = 0; i < n; ++i) {
+            if(A[i] == elem) {
+                ++count;
+            }
+            else if(count > 0) {
+                A[i - count] = A[i];
+            }
+        }
+        return n - count;
+    }
+};
+    </code></pre>
+</div>
+
+</body>
+</html>

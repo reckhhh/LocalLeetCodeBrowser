@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Combination Sum II</title>
+    <script type="text/javascript" src="highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" type="text/css" href="xcode.css">
+</head>
+<body>
+<h3>Combination Sum II</h3>
+<div class="description" font-size="5px">
+    <p><font size="2">Given a collection of candidate numbers (C) and a target number (T), find all unique combinations in C where the candidate numbers sums to T.</font></p>
+    <p><font size="2">Each number in C may only be used once in the combination.</font></p>
+    <p><font size="2">All numbers (including target) will be positive integers.</font></p>
+    <p><font size="2">Elements in a combination (a1, a2, ..., ak) must be in non-descending order. (ie, a1 <= a2 <= ... <= ak).</font></p>
+    <p><font size="2">The solution set must not contain duplicate combinations.</font></p>
+    <p><font size="2">For example, given candidate set 10, 1, 2, 7, 6, 1, 5 and target 8, </font></p>
+    <p><font size="2">A solution set is: </font></p>
+    <p><font size="2">[1, 7] </font></p>
+    <p><font size="2">[1, 2, 5] </font></p>
+    <p><font size="2">[2, 6] </font></p>
+    <p><font size="2">[1, 1, 6]  </font></p>
+    
+</div>
+<div style = "overflow: scroll">  
+    <pre><code>
+class Solution {
+public:
+    vector&ltvector&ltint> > combinationSum2(vector&ltint> &candidates, int target) {
+        sort(candidates.begin(), candidates.end());
+        vector&ltvector&ltint> > temp = combinationSum2Plus(candidates, target, candidates.size() - 1);
+        vector&ltvector&ltint> > result_set;
+
+        int length = temp.size();
+        for (int i = 0; i < length - 1; ++i) {
+            bool dumb = false;
+            for (int j = i + 1; j < temp.size(); ++j) {
+                if (temp[i] == temp[j]) {
+                    dumb = true;
+                    break;
+                }
+            } 
+            if(!dumb) {
+                result_set.push_back(temp[i]);
+            }
+        }
+        if (temp.size() > 0) {
+            result_set.push_back(temp[temp.size() - 1]);
+        }      
+        return result_set;
+    }
+    vector&ltvector&ltint> > combinationSum2Plus(vector&ltint> &candidates, int target, int current) {
+        vector&ltvector&ltint> > result_set;
+        int length = candidates.size();
+        for (int i = current; i >= 0; --i) {
+            if (candidates[i] == target) {
+                vector&ltint> result;
+                result.push_back(candidates[i]);
+                result_set.push_back(result);
+            }
+            else if (candidates[i] > target) {
+                continue;
+            }
+            else {
+                if (i - 1 >= 0) {
+                    vector&ltvector&ltint> > previous_set = combinationSum2Plus(candidates, target - candidates[i], i - 1);
+                    if (previous_set.size() == 0) {
+                        continue;
+                    }
+                    else {
+                        for (int j = 0; j < previous_set.size(); ++j) {
+                            previous_set[j].push_back(candidates[i]);
+                            result_set.push_back(previous_set[j]);
+                        }
+                    } 
+                }
+                        
+            }       
+        }
+        return result_set;
+    }
+};
+    </code></pre>
+</div>
+
+</body>
+</html>

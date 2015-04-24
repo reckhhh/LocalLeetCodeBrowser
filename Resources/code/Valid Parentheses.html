@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Valid Parentheses</title>
+    <script type="text/javascript" src="highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" type="text/css" href="xcode.css">
+</head>
+<body>
+<h3>Valid Parentheses</h3>
+<div class="description" font-size="5px">
+    <p><font size="2">Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid..</font></p>
+    <p><font size="2">The brackets must close in the correct order, "()" and "()[]{}" are all valid but "(]" and "([)]" are not.</font></p>
+</div>
+<div style = "overflow: scroll">  
+    <pre><code>
+class Solution {
+public:
+    bool isValid(string s) {
+        vector&ltchar> stack;
+        if (s.size() == 0) {
+            return true;
+        }
+        for (int i = 0; i < s.size(); ++i) {
+            char c = s[i];
+            switch (c) {
+                case '(':
+                    stack.push_back('(');
+                    break;
+                case '[':
+                    stack.push_back('[');
+                    break;
+                case '{':
+                    stack.push_back('{');
+                    break;
+                case ')':
+                    if (stack.empty() || stack.back() != '(') {
+                        return false;
+                    }
+                    stack.pop_back();
+                    break;
+                case ']':
+                    if (stack.empty() || stack.back() != '[') {
+                        return false;
+                    }
+                    stack.pop_back();
+                    break;
+                case '}':
+                    if (stack.empty() || stack.back() != '{') {
+                        return false;
+                    }
+                    stack.pop_back();
+                    break;
+                default:
+                    return false;
+            }
+        }
+        if (stack.size() != 0) {
+            return false;
+        }
+        return true;
+    }
+};
+    </code></pre>
+</div>
+
+</body>
+</html>

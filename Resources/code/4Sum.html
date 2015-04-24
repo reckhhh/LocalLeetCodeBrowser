@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>4Sum</title>
+    <script type="text/javascript" src="highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" type="text/css" href="xcode.css">
+</head>
+<body>
+<h3>4Sum</h3>
+<div class="description" font-size="5px">
+    <p><font size="2">Given an array S of n integers, are there elements a, b, c, and d in S such that a + b + c + d = target? Find all unique quadruplets in the array which gives the sum of target.</font></p>
+    <p><font size="2">Elements in a triplet (a,b,c,d) must be in non-descending order. (ie, a &le; b &le; c &le; d)</font></p>
+    <p><font size="2">The solution set must not contain duplicate triplets.</font></p>
+</div>
+<div style = "overflow: scroll">
+    <pre><code>
+class Solution {
+public:
+    vector&ltvector&ltint> > fourSum(vector&ltint> &num, int target) {
+        sort(num.begin(), num.end());
+        typedef vector&ltint> quadruplet;
+        vector&ltquadruplet> result;
+        for (int a = num.size() - 1; a >= 3; --a) {
+            if (a < num.size() - 1 && num[a] == num[a + 1]) {
+                continue;
+            }
+            for (int b = a -1; b >= 2; --b) {
+                if (b < a-1 && num[b] == num[b+1]) {
+                    continue;
+                }
+                for (int c = 0, d = b - 1; c < d;) {
+                    if (c > 0 && num[c] == num[c - 1]) {
+                        ++c;
+                        continue;
+                    }
+                    if (d < b - 1 && num[d] == num[d + 1]) {
+                        --d;
+                        continue;
+                    }
+                    int sum = num[a] + num[b] + num[c] + num[d];
+                    if (sum > target) {
+                        --d;
+                    }
+                    if (sum < target) {
+                        ++c;
+                    }
+                    if (sum == target) {
+                        vector&ltint> tmp(4);
+                        tmp[0] = num[c];
+                        tmp[1] = num[d];
+                        tmp[2] = num[b];
+                        tmp[3] = num[a];
+                        result.push_back(tmp);
+                        ++c;
+                        --d;
+                    }
+                }
+            }
+        }
+        return result;
+    }
+};
+    </code></pre>
+</div>
+
+
+</body>
+</html>

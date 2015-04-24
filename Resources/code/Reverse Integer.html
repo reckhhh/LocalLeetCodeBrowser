@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reverse Integer</title>
+    <script type="text/javascript" src="highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" type="text/css" href="xcode.css">
+</head>
+<body>
+<h3>Reverse Integer</h3>
+<div class="description" font-size="5px">
+    <p><font size="2">Reverse digits of an integer.</font></p>
+    <p><font size="2">
+        <b>Example1: </b>x = 123, return 321
+    </font></p>
+    <p><font size="2">
+        <b>Example2: </b>x = -123, return -321
+    </font></p>
+    
+</div>
+<div style = "overflow: scroll">  
+    <pre><code>
+class Solution {
+public:
+    int reverse(int x) {
+        bool neg = false;
+        if (x < 0) 
+            neg = true, x = -x;
+        unsigned int ret = 0;
+        while (x / 10) {
+            ret = ret * 10 + x % 10;
+            x = x / 10;
+        }
+        ret = ret * 10 + x;
+        if (ret > 0x7fffffff) return 0; //overflow check.
+        if (neg) return - (int)ret;
+        return (int)ret;
+    }
+};
+    </code></pre>
+</div>
+
+</body>
+</html>

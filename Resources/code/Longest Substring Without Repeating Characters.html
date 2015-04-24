@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Longest Substring Without Repeating Characters</title>
+    <script type="text/javascript" src="highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" type="text/css" href="xcode.css">
+</head>
+<body>
+<h3>Longest Substring Without Repeating Characters</h3>
+<div class="description" font-size="5px">
+    <p><font size="2">Given a string, find the length of the longest substring without repeating characters. For example, the longest substring without repeating letters for "abcabcbb" is "abc", which the length is 3. For "bbbbb" the longest substring is "b", with the length of 1.</font></p>
+</div>
+<div style = "overflow: scroll">  
+    <pre><code>class Solution {
+public:
+    int lengthOfLongestSubstring(string s) {
+        const char *str = s.c_str();
+        int maxlength = 0;
+        int templength = 0;
+        int start_index = 0;
+        unordered_map&ltchar, int> hashmap;
+        for (int i = 0; i < s.size(); i++) {
+            if (hashmap.find(str[i]) == hashmap.end()) {
+                hashmap[str[i]] = i;
+                templength++;
+            }
+            else {
+                start_index = (start_index > hashmap[str[i]]) ? start_index : hashmap[str[i]];
+                templength = i - start_index;
+                hashmap[str[i]] = i;
+            }
+            if (templength > maxlength) {
+                maxlength = templength;
+            }
+        }
+        return maxlength;
+    }
+};
+    </code></pre>
+</div>
+
+</body>
+</html>

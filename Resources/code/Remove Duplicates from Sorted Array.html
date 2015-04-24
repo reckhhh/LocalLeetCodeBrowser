@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Remove Duplicates from Sorted Array</title>
+    <script type="text/javascript" src="highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" type="text/css" href="xcode.css">
+</head>
+<body>
+<h3>Remove Duplicates from Sorted Array</h3>
+<div class="description" font-size="5px">
+    <p><font size="2">Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length.</font></p>
+    <p><font size="2">Do not allocate extra space for another array, you must do this in place with constant memory.</font></p>
+    <p><font size="2">For example,</font></p>
+    <p><font size="2">Given input array A = [1,1,2],</font></p>
+    <p><font size="2">Your function should return length = 2, and A is now [1,2].</font></p>
+</div>
+<div style = "overflow: scroll">  
+    <pre><code>
+class Solution {
+public:
+    int removeDuplicates(int A[], int n) {
+        int counter = 0;
+        for(int i = 0; i < n; ++i) {
+            if(counter == 0 || A[i] != A[counter - 1]) {
+                A[counter] = A[i];
+                ++counter;
+            }
+        }
+        return counter;
+    }
+};
+    </code></pre>
+</div>
+
+</body>
+</html>
